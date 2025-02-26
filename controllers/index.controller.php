@@ -6,7 +6,7 @@ include 'dados.php';
 
 
 
-view("index");
+view('index', ['livros' => $livros]);
 
 require "views/template/app.php";
 
