@@ -13,6 +13,8 @@ function dd(...$dump){
 
 
 function abort($code){
+
+
     http_response_code($code);
     view($code);
     die();
@@ -20,7 +22,13 @@ function abort($code){
 }
 
 
-function view($view){
+function view($view, $data = []){
+
+
+
+    foreach($data as $key => $value){
+        $$key = $value;
+    }
 
     require "views/template/app.php";
 
